@@ -1,6 +1,6 @@
 import React from 'react';
 import { FiHome, FiSearch, FiHeart, FiUser } from 'react-icons/fi'; // Example using React Icons
-import styles from './NavBar.module.css';
+import styles from './Navbar.module.css';
 
 const NavBar = () => {
   return (
