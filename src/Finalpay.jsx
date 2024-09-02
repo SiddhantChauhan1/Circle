@@ -3,7 +3,7 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { Link } from 'react-router-dom';
 import topicons from "./icons/iconstop.png"
 
-function RentConversionPage() {
+function Finalpay() {
   const [paymentAmount, setPaymentAmount] = useState('INR XXXX.00');
   const [monthlyRent, setMonthlyRent] = useState('10,000 INR/mo.');
   const [rentCycle, setRentCycle] = useState('5 Months');
@@ -19,7 +19,7 @@ function RentConversionPage() {
   return (
     <div className="bg-white p-6 rounded-lg max-w-md mx-auto mt-10">
       <div className="flex items-center justify-between mb-4">
-        <Link to='/paywithcircle'>
+        <Link to='/payscreen'>
         <ArrowLeftIcon className="h-6 w-6 text-gray-500 cursor-pointer" />
         </Link>
       </div>
@@ -86,4 +86,4 @@ function RentConversionPage() {
   );
 }
 
-export default RentConversionPage;
+export default Finalpay;

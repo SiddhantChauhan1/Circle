@@ -19,7 +19,7 @@ const steps = [
   },
 ];
 
-const EligibilitySteps = () => {
+const Payscreen = () => {
   return (
     <>
     <div className="max-w-md mx-auto mt-4 p-6">
@@ -71,7 +71,7 @@ const EligibilitySteps = () => {
           </label>
         </div>
         <button className="bg-blue-500 text-white py-3 px-24 rounded-lg shadow-md hover:bg-blue-600 transition-colors">
-        <Link to="/payfinal">
+        <Link to="/finalpay">
           Get Started &gt;
         </Link>
         </button>
@@ -86,4 +86,4 @@ const EligibilitySteps = () => {
   );
 };
 
-export default EligibilitySteps;
+export default Payscreen;

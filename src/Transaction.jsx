@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import house1 from "./icons/img2.png";
-import backicon from "./icons/back.png";
+import backicon from "./icons/backbutton.png";
 import image1 from "./icons/img2.png";
-import house2 from "./icons/house2.jpeg";
-import image3 from "./icons/img3.jpeg";
-import RentOffer from './RentOffer';
+import Payslider from './Payslider';
 
 const periods = [
   { label: '3 months', value: 3 },
@@ -13,36 +10,10 @@ const periods = [
   { label: '9 months', value: 9 },
 ];
 
-const properties = [
-  {
-    id: 1,
-    name: "Sky Dandelions Apartment",
-    location: "Sector 28, Gurgaon",
-    price: "₹ 22,000",
-    rating: "4.9",
-    image: image1,
-  },
-  {
-    id: 2,
-    name: "Wings Tower",
-    location: "Sector 27, Gurgaon",
-    price: "₹ 17,000",
-    rating: "4.9",
-    image: house2,
-  },
-  {
-    id: 3,
-    name: "Wayside Modern House",
-    location: "MG road, Gurgaon",
-    price: "₹ 18,000",
-    rating: "4.4",
-    image: image3,
-  },
-];
 
 const TransactionReview = () => {
   const [selectedPeriod, setSelectedPeriod] = useState(6);
-  const [isSlideVisible, setIsSlideVisible] = useState(false); // State to control the sliding effect
+  const [isSlideVisible, setIsSlideVisible] = useState(false);
 
   const handlePeriodSelect = (period) => {
     setSelectedPeriod(period);
@@ -65,7 +36,7 @@ const TransactionReview = () => {
         <img
           src={image1}
           alt="Apartment"
-          className="h-36 w:auto md:w-36 rounded-lg mr-4"
+          className="w-1/2 md:w-36 rounded-lg mr-4"
         />
         <div className="flex-1 text-left">
           <h2 className="text-lg font-semibold">Sky Dandelions Apartment</h2>
@@ -120,11 +91,11 @@ const TransactionReview = () => {
       {/* Sliding Section */}
       <div
         className={`fixed inset-x-0 bottom-0 bg-white shadow-lg overflow-hidden transition-all duration-500 ease-in-out ${
-          isSlideVisible ? 'h-1/2' : 'h-0'
+          isSlideVisible ? 'h-2/3' : 'h-0'
         }`}
       >
         <div className="p-4">
-          <RentOffer />
+          <Payslider />
           <button
             onClick={() => setIsSlideVisible(false)}
             className="mt-4 text-blue-500 px-4 py-2 rounded"

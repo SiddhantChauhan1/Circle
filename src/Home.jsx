@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from './Footer';
 import Filterimage from "./icons/filter.png";
 import image1 from "./icons/img2.png";
-import house2 from "./icons/house2.jpeg"
+import house2 from "./icons/house2.jpeg";
 import image3 from "./icons/img3.jpeg";
-import backicon from "./icons/back.png";
+import backicon from "./icons/backbutton.png";
 import { Link } from 'react-router-dom';
 
-
-function SearchResults() {
+function Home() {
+  const [searchQuery, setSearchQuery] = useState('');
+  
   const properties = [
     {
       id: 1,
@@ -36,6 +37,12 @@ function SearchResults() {
     },
   ];
 
+  // Filter properties based on the search query
+  const filteredProperties = properties.filter(property =>
+    property.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    property.location.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <>
     <div className="p-4">
@@ -55,7 +62,13 @@ function SearchResults() {
         {/* Search Bar */}
         <div className="relative mb-4">
         <label className="input input-bordered flex items-center gap-2 bg-blue-200 border-none rounded-2xl py-8">
-          <input type="text" className="grow" placeholder="Search" />
+          <input
+            type="text"
+            className="grow"
+            placeholder="Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
@@ -67,13 +80,13 @@ function SearchResults() {
                   clipRule="evenodd" />
               </svg>
             </label>
-          
         </div>
         {/* Cards */}
-        {properties.map((property) => (
+        {filteredProperties.map((property) => (
+          <Link to="/transaction">
           <div
             key={property.id}
-            className="h-50 bg-blue-200 p-4 rounded-3xl mb-4 flex items-cente md:py-4"
+            className="h-50 bg-blue-200 p-4 rounded-3xl mb-4 flex items-center md:py-4"
           >
             <img
               src={property.image}
@@ -82,24 +95,24 @@ function SearchResults() {
             />
             <div className="flex-1 text-left">
               <h2 className="text-lg font-semibold">
-              <Link to="/transaction">
-              {property.name}
-              </Link></h2>
+                {property.name}
+              </h2>
               <p className="text-xs text-gray-500">{property.rating} ★</p>
               <p className="text-xs text-gray-500">{property.location}</p>
-              <div className="text-lg font-semibold mt-4">{property.price}<span className='text-xs'>/month</span></div>
-                
-              {/* </div> */}
+              <div className="text-lg font-semibold mt-4">
+                {property.price}<span className='text-xs'>/month</span>
+              </div>
             </div>
           </div>
+          </Link>
         ))}
       </div>
     </div>
     <div>
       <NavBar/>
-    </div>
+    </div>
     </>
   );
 }
 
-export default SearchResults;
+export default Home;
