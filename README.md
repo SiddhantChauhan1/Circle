@@ -1,8 +1,5 @@
-# React + Vite
+# Renting Site Clone Project for Circlepe
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CirclePe is a financial technology company that focuses on providing seamless digital payment solutions for businesses and individuals. The company specializes in creating innovative, user-friendly platforms for secure transactions and financial management. With a commitment to enhancing the digital economy, CirclePe aims to empower users with efficient and reliable payment tools.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project has been created for the application at Circlepe
